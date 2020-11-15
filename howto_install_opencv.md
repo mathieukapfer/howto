@@ -163,7 +163,7 @@ This may be usefull to help to set `CMAKE_PREFIX_PATH` value on `OpenCVConfig.cm
 
 ### other examples
 
-First, check that you have enabled the build of example
+First, check that you have enabled the build of examples
 
 In `build` directory, type the command below to check or edit the configuration `ccmake ..`
 Check the line `BUILD_EXAMPLES                   ON`
