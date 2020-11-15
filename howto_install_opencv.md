@@ -94,18 +94,6 @@ Press [t] to toggle advanced mode (Currently Off)
 You probably need to install `ccmake` support:
   - On debian 10: `sudo apt install cmake-curses-gui`
 
-To prepare the next steps, you can check
-  - the opencl support is detected:
-
-      ```
-      OPENCL_FOUND                     ON
-      ```
-  - the compilation of examples is set
-
-      ```
-      BUILD_EXAMPLES                   ON
-      ```
-
 ### Build
 Once you have checked your configurationn, let's compile the project, possibly in a parallel build
 In `build` directory, do:
@@ -114,14 +102,16 @@ In `build` directory, do:
     ```
 
 ### Install
-Now, you can install the lib end possibly change the install dir thanks to `DESTDIR`
-In `build` directory, do:
+Now, you can install the lib. You may use `DESTDIR` to change install dir at install time.
+So, to install locally:
 ```
-    make DESTDIR=~/.local install
+   cd build
+   make DESTDIR=~/.local install
 ```
-if you want to keep the default installation dir, just type
+To keep the configured installation dir (`/usr/local` by default):
 ```
-    sudo make install
+   cd build
+   sudo make install
 ```
 
 
@@ -168,7 +158,8 @@ make
 ./opencv_example
 ```
 
-The option `--debug-find` is just to have debug support in order to set the good `CMAKE_PREFIX_PATH` value to localisation of `OpenCVConfig.cmake` file
+The option `--debug-find` trigger the `find_package` debug mode. 
+This may be usefull to help to set `CMAKE_PREFIX_PATH` value on `OpenCVConfig.cmake` file directory
 
 ### other examples
 
@@ -304,7 +295,8 @@ WITH_OPENCL                      ON
 
 ```
 
-If you do not have `OPENCL_FOUND   ON`, check your `opencl` driver installation
+If you do not have `OPENCL_FOUND   ON`, check your `opencl` driver installation. 
+
 The command `clinfo` should detect your device
 
 ```
