@@ -1,5 +1,5 @@
 
-# How to 'opencv'
+# How to `opencv` with support of `opencl`
 
 Content:
   - installation
