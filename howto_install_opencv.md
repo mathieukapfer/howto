@@ -31,7 +31,7 @@ git clone https://github.com/opencv/opencv_extra
 git -C opencv_extra checkout <same-tag-as-opencv>
 ```
 
-The commands I used to run this "Howto"
+The commands used for this "Howto"
 ```
 git clone https://github.com/opencv/opencv
 git -C opencv checkout 4.5.0
@@ -211,7 +211,7 @@ references:
 
 ### Have a look on sources
 
-Thats the location of `opencl` directories thanks to `find . -type d | grep opencl`
+That's the location of `opencl` sources directories  (result of `find . -type d | grep opencl`)
 ```
 ./samples/opencl
 ./modules/photo/src/opencl
@@ -336,7 +336,7 @@ cd build && make
 ```
 
 #### get data
-To run perormance test, you need data contains in below repo:
+To run performance test, you need data contains in below repo:
 ```
 git clone https://github.com/opencv/opencv_extra
 git -C opencv_extra checkout <same-tag-as-opencv>
