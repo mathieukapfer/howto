@@ -305,7 +305,8 @@ WITH_OPENCL                      ON
 
 ```
 
-If you do not have 'OPENCL_FOUND' to ON check your opencl driver installation and check the result of clinfo
+If you do not have `OPENCL_FOUND   ON`, check your `opencl` driver installation
+The command `clinfo` should detect your device
 
 ```
 kapfer@debian-desktop:~/Project/opencv_extra/testdata$ clinfo
@@ -346,9 +347,99 @@ In case of local install, just add the following steps
   - set bin path:  `export PATH=$PATH:~/Project/opencv/build/bin/`
 
 #### GO !
-Now, you can go to `opencv_extra/testdata` and execute the `opencv_perf_core`
+Now, you can go to `opencv_extra/testdata` and execute for instance the `opencv_perf_photo`
 
-```
+```bash
 $ cd opencv_extra/testdata
-$ opencv_perf_core > opencv_perf_core__output.txt
+$ opencv_perf_photo
+
+Time compensation is 0
+TEST: Skip tests with tags: 'mem_6gb', 'verylong'
+CTEST_FULL_OUTPUT
+OpenCV version: 4.5.0
+OpenCV VCS version: 4.5.0-dirty
+Build type: Release
+Compiler: /usr/bin/c++  (ver 8.3.0)
+Parallel framework: pthreads (nthreads=8)
+CPU features: SSE SSE2 SSE3 *SSE4.1 *SSE4.2 *FP16? *AVX *AVX2? *AVX512-SKX?
+Intel(R) IPP version: ippIP SSE4.2 (y8) 2020.0.0 Gold (-) Oct 19 2019
+OpenCL Platforms:
+    NVIDIA CUDA
+        dGPU: GeForce GTX 560 Ti (OpenCL 1.1 CUDA)
+    Clover
+Current OpenCL device:
+    Type = dGPU
+    Name = GeForce GTX 560 Ti
+    Version = OpenCL 1.1 CUDA
+    Driver version = 390.138
+    Address bits = 64
+    Compute units = 11
+    Max work group size = 1024
+    Local memory size = 48 KB
+    Max memory allocation size = 304 MB 784 KB
+    Double support = Yes
+    Host unified memory = No
+    Device extensions:
+        cl_khr_global_int32_base_atomics
+        cl_khr_global_int32_extended_atomics
+        cl_khr_local_int32_base_atomics
+        cl_khr_local_int32_extended_atomics
+        cl_khr_fp64
+        cl_khr_byte_addressable_store
+        cl_khr_icd
+        cl_khr_gl_sharing
+        cl_nv_compiler_options
+        cl_nv_device_attribute_query
+        cl_nv_pragma_unroll
+        cl_nv_copy_opts
+        cl_nv_create_buffer
+    Has AMD Blas = No
+    Has AMD Fft = No
+    Preferred vector width char = 1
+    Preferred vector width short = 1
+    Preferred vector width int = 1
+    Preferred vector width long = 1
+    Preferred vector width float = 1
+    Preferred vector width double = 1
+[==========] Running 8 tests from 3 test cases.
+[----------] Global test environment set-up.
+[----------] 1 test from OCL_Photo_DenoisingGrayscale
+[ RUN      ] OCL_Photo_DenoisingGrayscale.DenoisingGrayscale
+[ PERFSTAT ]    (samples=10   mean=80.34   median=79.99   min=79.46   stddev=0.92 (1.1%))
+[       OK ] OCL_Photo_DenoisingGrayscale.DenoisingGrayscale (812 ms)
+[----------] 1 test from OCL_Photo_DenoisingGrayscale (812 ms total)
+
+[----------] 1 test from OCL_Photo_DenoisingColored
+[ RUN      ] OCL_Photo_DenoisingColored.DenoisingColored
+[ PERFSTAT ]    (samples=10   mean=173.82   median=159.91   min=159.14   stddev=43.08 (24.8%))
+[       OK ] OCL_Photo_DenoisingColored.DenoisingColored (1747 ms)
+[----------] 1 test from OCL_Photo_DenoisingColored (1747 ms total)
+
+[----------] 6 tests from InpaintArea_InpaintingMethod_inpaint
+[ RUN      ] InpaintArea_InpaintingMethod_inpaint.inpaint/0, where GetParam() = (24x24, INPAINT_NS)
+[ PERFSTAT ]    (samples=10   mean=12.26   median=12.16   min=12.13   stddev=0.31 (2.5%))
+[       OK ] InpaintArea_InpaintingMethod_inpaint.inpaint/0 (133 ms)
+[ RUN      ] InpaintArea_InpaintingMethod_inpaint.inpaint/1, where GetParam() = (24x24, INPAINT_TELEA)
+[ PERFSTAT ]    (samples=10   mean=12.31   median=12.28   min=12.24   stddev=0.06 (0.5%))
+[       OK ] InpaintArea_InpaintingMethod_inpaint.inpaint/1 (133 ms)
+[ RUN      ] InpaintArea_InpaintingMethod_inpaint.inpaint/2, where GetParam() = (32x32, INPAINT_NS)
+[ PERFSTAT ]    (samples=10   mean=19.56   median=19.47   min=19.40   stddev=0.16 (0.8%))
+[       OK ] InpaintArea_InpaintingMethod_inpaint.inpaint/2 (205 ms)
+[ RUN      ] InpaintArea_InpaintingMethod_inpaint.inpaint/3, where GetParam() = (32x32, INPAINT_TELEA)
+[ PERFSTAT ]    (samples=10   mean=18.58   median=18.59   min=18.54   stddev=0.03 (0.1%))
+[       OK ] InpaintArea_InpaintingMethod_inpaint.inpaint/3 (195 ms)
+[ RUN      ] InpaintArea_InpaintingMethod_inpaint.inpaint/4, where GetParam() = (64x64, INPAINT_NS)
+[ PERFSTAT ]    (samples=10   mean=66.83   median=66.61   min=66.54   stddev=0.54 (0.8%))
+[       OK ] InpaintArea_InpaintingMethod_inpaint.inpaint/4 (678 ms)
+[ RUN      ] InpaintArea_InpaintingMethod_inpaint.inpaint/5, where GetParam() = (64x64, INPAINT_TELEA)
+[ PERFSTAT ]    (samples=10   mean=59.89   median=59.66   min=59.54   stddev=0.52 (0.9%))
+[       OK ] InpaintArea_InpaintingMethod_inpaint.inpaint/5 (609 ms)
+[----------] 6 tests from InpaintArea_InpaintingMethod_inpaint (1953 ms total)
+
+[----------] Global test environment tear-down
+[==========] 8 tests from 3 test cases ran. (4512 ms total)
+[  PASSED  ] 8 tests.
+
+  YOU HAVE 2 DISABLED TESTS
+
 ```
