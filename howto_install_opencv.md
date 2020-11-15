@@ -349,7 +349,8 @@ In case of local install, just add the following steps
   - set bin path:  `export PATH=$PATH:~/Project/opencv/build/bin/`
 
 #### GO !
-Now, you can go to `opencv_extra/testdata` and execute for instance the `opencv_perf_photo`
+Now, you can go to `opencv_extra/testdata` and execute for perf test.
+Hereafter is the result of `opencv_perf_photo`
 
 ```bash
 $ cd opencv_extra/testdata
