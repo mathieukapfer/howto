@@ -1,5 +1,5 @@
 
-# How to `opencv` with support of `opencl`
+# How to `opencv` and acceleration with `opencl`
 
 Content:
   - installation
