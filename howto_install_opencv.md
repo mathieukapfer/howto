@@ -2,11 +2,11 @@
 # How to `opencv` and acceleration with `opencl`
 
 Content:
-  - installation
-  - run basic examples
-  - opencl optimisation (docs & code)
-  - run benchmark (`opencv_perf_*` examples) with opencl enabled (on GPU GeForce GTX 560 Ti)
-    
+  - [installation](#install-from-sources)
+  - [run](#run) basic examples
+  - [opencl optimisation](#opencl-optimisations) (docs & code)
+  - run [benchmark](#benchmark) (`opencv_perf_*` examples) with opencl enabled (on GPU GeForce GTX 560 Ti)
+
 
 ## Install (from sources)
 references:
@@ -158,7 +158,7 @@ make
 ./opencv_example
 ```
 
-The option `--debug-find` trigger the `find_package` debug mode. 
+The option `--debug-find` trigger the `find_package` debug mode.
 This may be usefull to help to set `CMAKE_PREFIX_PATH` value on `OpenCVConfig.cmake` file directory
 
 ### other examples
@@ -295,7 +295,7 @@ WITH_OPENCL                      ON
 
 ```
 
-If you do not have `OPENCL_FOUND   ON`, check your `opencl` driver installation. 
+If you do not have `OPENCL_FOUND   ON`, check your `opencl` driver installation.
 
 The command `clinfo` should detect your device
 
