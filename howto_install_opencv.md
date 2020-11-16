@@ -4,7 +4,7 @@
 Content:
   - installation
   - run basic examples
-  - pointer to opencl optimisation (docs & code)
+  - opencl optimisation (docs & code)
   - run benchmark (`opencv_perf_*` examples) with opencl enabled (on GPU GeForce GTX 560 Ti)
     
 
