@@ -1,10 +1,10 @@
 
 
 # sources
-autoware home:  https://gitlab.com/autowarefoundation/autoware.auto/AutowareAuto
-autoware docs:  https://autowarefoundation.gitlab.io/autoware.auto/AutowareAuto/installation.html
-install ADE:    https://ade-cli.readthedocs.io/en/latest/install.html
-install docker: https://docs.docker.com/engine/install/debian/#install-using-the-repository
+  - autoware home:  https://gitlab.com/autowarefoundation/autoware.auto/AutowareAuto
+  - autoware docs:  https://autowarefoundation.gitlab.io/autoware.auto/AutowareAuto/installation.html
+  - install ADE:    https://ade-cli.readthedocs.io/en/latest/install.html
+  - install docker: https://docs.docker.com/engine/install/debian/#install-using-the-repository
 
 
 # install docker on debian
@@ -76,10 +76,10 @@ For more examples and ideas, visit:
 ```
 
 ## install nvidia support inside docker:
-source : https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker
-from : https://github.com/NVIDIA/nvidia-docker#quickstart%3E
-from : https://ade-cli.readthedocs.io/en/latest/install.html
-from : https://autowarefoundation.gitlab.io/autoware.auto/AutowareAuto/installation.html
+  - source : https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker
+  - from : https://github.com/NVIDIA/nvidia-docker#quickstart%3E
+  - from : https://ade-cli.readthedocs.io/en/latest/install.html
+  - from : https://autowarefoundation.gitlab.io/autoware.auto/AutowareAuto/installation.html
 
 ```
 kapfer@debian-desktop:~$ distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
