@@ -159,3 +159,66 @@ else, run it without update [not recommanded]
 ```
 ade start --enter
 ```
+
+## build & run unit test : ndt
+
+    cd AutowareAuto/
+    colcon build --packages-up-to ndt  --event-handlers console_direct+
+
+    source install/setup.bash
+    colcon test --packages-select ndt --ctest-args -R test --event-handlers console_direct+
+
+## [PRIVATE] install emacs + lsp-mode as ide
+
+### create docker with emacs26
+
+Create file named `Dockerfile` with this content
+
+```
+FROM registry.gitlab.com/autowarefoundation/autoware.auto/autowareauto/amd64/ade-dashing:master
+
+WORKDIR .
+
+RUN apt-get -y install software-properties-common
+RUN add-apt-repository -y ppa:kelleyk/emacs
+RUN apt-get -y update
+RUN apt-get -y install emacs26
+RUN update-alternatives --set emacs /usr/bin/emacs26
+```
+
+Create your docker image
+
+```
+docker build -tag=ade-dashing-with-emacs26 .
+```
+
+Replace it in `.aderc`
+
+before:
+
+```
+export ADE_IMAGES="
+  registry.gitlab.com/autowarefoundation/autoware.auto/autowareauto/amd64/ade-dashing:master
+  registry.gitlab.com/autowarefoundation/autoware.auto/autowareauto/amd64/binary-dashing:master
+"
+```
+
+after
+
+```
+export ADE_IMAGES="
+  ade-dashing-with-emacs26
+  registry.gitlab.com/autowarefoundation/autoware.auto/autowareauto/amd64/binary-dashing:master
+"
+```
+
+### source navigation (lsp-mode)
+To get lsp (langage server protocol) feature in you favorite IDE, you probably need `compile_commands.json` file.
+To get it, we need to get a compilation with full command line and use `bear` as interceptor and `make` with `VERBOSE` mode:
+
+    cd /home/kapfer/AutowareAuto/build/ndt
+    bear make VERBOSE=1
+
+You got the `compile_commands.json` in this build dir, now just copy it in root source dir:
+
+    cp compile_commands.json ~/AutowareAuto
