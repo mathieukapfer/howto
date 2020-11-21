@@ -128,12 +128,6 @@ $ cd adehome
 $ git clone https://gitlab.com/autowarefoundation/autoware.auto/AutowareAuto.git
 ```
 
-## copy .aderc [really?]
-
-```
-$ ln -s AutowareAuto/.aderc .
-```
-
 ## check user groups contains `docker`
 
 You should have `docker` group for you user.
@@ -158,6 +152,7 @@ docker cdrom floppy sudo audio dip video plugdev netdev bluetooth lpadmin scanne
 ## run ade
 Check if you have enougth place for update
 ```
+cd AutowareAuto
 ade start --update --enter
 ```
 else, run it without update [not recommanded]
