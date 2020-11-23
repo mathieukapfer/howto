@@ -168,10 +168,21 @@ ade start --enter
     source install/setup.bash
     colcon test --packages-select ndt --ctest-args -R test --event-handlers console_direct+
 
-## [PRIVATE] install emacs + lsp-mode as ide
 
-### create docker with emacs26
+# add tools in ade docker
+## emacs26 + lsp-mode [for emacs crazy user only!]
+### commands
+In order to add `emacs26` in your docker instance, just type this in a running instance
+```
+$  apt-get -y install software-properties-common
+$  add-apt-repository -y ppa:kelleyk/emacs
+$  apt-get -y update
+$  apt-get -y install emacs26
+$  update-alternatives --set emacs /usr/bin/emacs26
+```
 
+### Dockerfile
+In order to add  `emacs26` in docker image, create the following Dockerfile
 Create file named `Dockerfile` with this content
 
 ```
@@ -212,7 +223,7 @@ export ADE_IMAGES="
 "
 ```
 
-### source navigation (lsp-mode)
+## source navigation (lsp-mode)
 To get lsp (langage server protocol) feature in you favorite IDE, you probably need `compile_commands.json` file.
 To get it, we need to get a compilation with full command line and use `bear` as interceptor and `make` with `VERBOSE` mode:
 
@@ -222,3 +233,29 @@ To get it, we need to get a compilation with full command line and use `bear` as
 You got the `compile_commands.json` in this build dir, now just copy it in root source dir:
 
     cp compile_commands.json ~/AutowareAuto
+
+Probably you need to install `bear` with `sdu apt install bear` or by completing the Dockerfile with `RUN apt-get -y install bear`
+
+
+## valgrind & callgrind
+### commands
+
+```
+$ sudo apt-get install valgrind
+$ sudo apt-get install kcachegrind
+```
+### Dockerfile addition
+
+```
+RUN apt-get -y install valgrind
+RUN apt-get -y install kcachegrind
+```
+
+### usage (on `ndt` example)
+
+    $ cd /home/kapfer/AutowareAuto/build/ndt
+    $ valgrind --tool=callgrind ./ndt_gtest
+    $ kcachegrind &
+
+![callgrind snapshot](valgrind_callgrind_ndt.png)
+![callgrind snapshot2](valgring_callgrind_ndt_source.png)
