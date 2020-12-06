@@ -462,7 +462,7 @@ Have a look on fixes:  https://github.com/opencv/opencv/compare/master...mathieu
 
 ## get it
 
-Get fixed and script:
+Get fixed code and script:
 
     git clone git@github.com:mathieukapfer/opencv.git
     git checkout dev/test_opencl_mkapfer
