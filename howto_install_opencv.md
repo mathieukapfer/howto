@@ -435,3 +435,18 @@ Current OpenCL device:
   YOU HAVE 2 DISABLED TESTS
 
 ```
+
+
+# How to `opencv` and buffer interop with `opencl`
+
+![copy image](opencv-opencl-buffer-interop-disable.png)
+![use opencl buffer](opencv-opencl-buffer-interop-enable.png)
+
+script helper & fix is here:
+
+    git clone git@github.com:mathieukapfer/opencv.git
+    git checkout dev/test_opencl_mkapfer
+
+just type 'make' and follow instruction
+
+https://github.com/mathieukapfer/opencv/tree/dev/test_opencl_mkapfer/makefile
