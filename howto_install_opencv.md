@@ -455,7 +455,7 @@ fixes:
 
 Have a look on fixes:  https://github.com/opencv/opencv/compare/master...mathieukapfer:dev/test_opencl_mkapfer
 
-## screenshot
+## screenshots
 
 ![copy image](opencv-opencl-buffer-interop-disable.png)
 ![use opencl buffer](opencv-opencl-buffer-interop-enable.png)
@@ -471,7 +471,7 @@ Then, just type `make` and follow instruction.
 
 If you have a look on the makefile, this is the direct link on it:
 
-https://github.com/mathieukapfer/opencv/tree/dev/test_opencl_mkapfer/makefile)
+  https://github.com/mathieukapfer/opencv/tree/dev/test_opencl_mkapfer/makefile)
 
 If you want to do actions on your own, here is makefile content:
 
