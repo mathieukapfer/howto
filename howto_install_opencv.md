@@ -441,9 +441,9 @@ Current OpenCL device:
 
 How to run the example of interoperability between OpenCL and OpenCV:
 
-original files: https://github.com/mathieukapfer/opencv/blob/master/samples/opencl/opencl-opencv-interop.cpp
-
-fixed files: https://github.com/mathieukapfer/opencv/blob/dev/test_opencl_mkapfer/samples/opencl/opencl-opencv-interop.cpp
+files:
+  - original: https://github.com/mathieukapfer/opencv/blob/master/samples/opencl/opencl-opencv-interop.cpp
+  - fixed:    https://github.com/mathieukapfer/opencv/blob/dev/test_opencl_mkapfer/samples/opencl/opencl-opencv-interop.cpp
 
 fixes:
   - 1fbe3997cf [sample] opencl interop - add makefile helper
