@@ -439,14 +439,49 @@ Current OpenCL device:
 
 # How to `opencv` and buffer interop with `opencl`
 
+How to run the example of interoperability between OpenCL and OpenCV:
+
+https://github.com/mathieukapfer/opencv/blob/master/samples/opencl/opencl-opencv-interop.cpp
+
 ![copy image](opencv-opencl-buffer-interop-disable.png)
 ![use opencl buffer](opencv-opencl-buffer-interop-enable.png)
 
-script helper & fix is here:
+Helper & fix are here:
 
     git clone git@github.com:mathieukapfer/opencv.git
     git checkout dev/test_opencl_mkapfer
 
-just type 'make' and follow instruction
+Then, just type `make` and follow instruction.
 
-https://github.com/mathieukapfer/opencv/tree/dev/test_opencl_mkapfer/makefile
+If you have a lookl on the makfile:
+ - this is the diret link https://github.com/mathieukapfer/opencv/tree/dev/test_opencl_mkapfer/makefile)
+
+If you want to do action on your own, here is makefile content:
+
+```makefile
+
+help:
+	@echo "This is just an helper to quick install, configure, compile and run somes opencv examples"
+	@echo
+	@echo "First, follow this link for initial setup"
+	@echo " https://github.com/mathieukapfer/howto/blob/master/howto_install_opencv.md"
+	@echo
+	@echo "Second, finalize the dependancies installation with"
+	@echo "  make check-install"
+	@echo
+	@echo "Then, build & run the sample 'opencl-opencv-interop' with"
+	@echo "  make test-opencl-buffer"
+
+
+# sudo apt list --installed
+check-install:
+	sudo apt install libavcodec-dev libavdevice58 libavformat-dev libavresample-dev libavutil-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libgstreamermm-1.0-dev
+
+build-test-opencl:
+	cd build/samples/opencl && make
+
+test-opencl-buffer:build-test-opencl
+	cd build/bin && ./example_opencl_opencl-opencv-interop --video=../../../opencv_extra/testdata/cv/video/768x576.avi
+
+
+```
