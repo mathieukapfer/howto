@@ -453,10 +453,10 @@ Helper & fix are here:
 
 Then, just type `make` and follow instruction.
 
-If you have a lookl on the makfile:
- - this is the diret link https://github.com/mathieukapfer/opencv/tree/dev/test_opencl_mkapfer/makefile)
+If you have a look on the makefile:
+ - this is the direct link on it:  https://github.com/mathieukapfer/opencv/tree/dev/test_opencl_mkapfer/makefile)
 
-If you want to do action on your own, here is makefile content:
+If you want to do actions on your own, here is makefile content:
 
 ```makefile
 
