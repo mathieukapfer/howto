@@ -451,6 +451,8 @@ fixes:
   - a7c365551b [sample] opencl interop - fix issue with opencl 1.2
   - 49b4bc6f43 [sample] opencl interop - add debug facilities
 
+Have a look on fixes:  https://github.com/opencv/opencv/compare/master...mathieukapfer:dev/test_opencl_mkapfer
+
 ![copy image](opencv-opencl-buffer-interop-disable.png)
 ![use opencl buffer](opencv-opencl-buffer-interop-enable.png)
 
